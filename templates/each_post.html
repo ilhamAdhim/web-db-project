@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% block content %}
+
+
+<h1 style="font-family: 'Rubik', sans-serif;">
+	{{ data_post.post_title }} 
+</h1>
+
+<div class="w3-right" style="font-family: 'Ubuntu', sans-serif;">
+	By {{data_post.username}} on {{data_post.date_posted}}
+</div>
+<br><br>
+
+<img src="../static/assets/image_2403.png".jpg" alt="photo" style="height:450px;width:100%;">
+
+<br><br>
+<div class="w3-container" style="font-family: 'Slabo 27px', serif; font-size: 18px;">
+	content : {{ data_post.content }}
+	
+</div>
+
+<span class="w3-right w3-hoverable">  	
+	<a href="{{url_for('insert_bookmark',post_id=data_post.post_id)}}" method="POST"">
+  		<i onclick="myFunction(this)" class="fa fa-bookmark w3" style="font-size: 25px;"></i>
+  	</a>
+</span>
+
+
+
+
+{% endblock content %}

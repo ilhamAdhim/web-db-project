@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	
+	<!-- iconWHERE author_id=1 ORDER BY post_date DESC;s -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<!-- W3s.css  -->
+	<link rel="stylesheet" type="text/css" href="https://www.w3schools.com/w3css/4/w3.css">
+
+	<!-- google fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Fjalla+One|Open+Sans|Rubik|Slabo+27px|Source+Sans+Pro|Ubuntu" rel="stylesheet"> 
+
+<!-- Title condition using flask and jinja templating -->
+		{% if title %}
+			<title> DigiWrite -- {{ title }} </title>
+		{% else %}
+			<title> Welcome to DigiWrite ! </title>
+		{% endif %}
+</head>
+
+<script>
+function myFunction(x) {
+  x.classList.toggle("fa-bookmark-o");
+}
+
+function myFunction2(x) {
+  x.classList.toggle("fa-bookmark");
+}
+</script>
+		
+<style>
+
+	.w3-tag{
+		font-family: 'Source Sans Pro', sans-serif; 
+	}
+	.zoom{
+		transition: transform .5s;
+	}
+	.zoom:hover{
+		transform: scale(1.1);
+	}
+
+	a:hover{
+		text-decoration: none;
+	}
+
+	.hover:hover{
+		border-right: 5px solid #e29228;
+		background-color: white;
+	}
+</style>
+
+<body class="w3-responsive">
+	
+	
+	<!-- Navbar starts here -->
+	<div class="w3-bar w3-large" style="background-color: #161616;">
+		
+		<a href="/home">
+			<div class="w3-bar-item">
+			<img src="../static/assets/digiwrite.png" alt="digiwrite" style="height: 75px">				
+			</div>
+		</a>
+
+		
+		<a href=" {{url_for('category_list',c_name='Lifestyle',c_id=1)}} " class="w3-dropdown-hover w3-bar-item w3-button w3-padding-32 w3-text-light-grey hover" style="font-size:16px;text-decoration:none;">
+			Lifestyle
+			<div class="w3-dropdown-content w3-card-4" style="width:450px">
+	    		<img src="../static/assets/lifestyle.jpg" alt="lifestyle" style="width:100%" class="w3-animate-top">
+		    		<div class="w3-container">
+		      			<p class="w3-animate-top">London is the capital city of England.</p>
+		      			<p class="w3-animate-top">It is the most populous city in the UK.</p>
+		    		</div>
+		  	</div>
+			
+		</a>
+
+
+		<a href="{{url_for('category_list',c_name='Technology',c_id=2)}}" class="w3-dropdown-hover w3-bar-item w3-button w3-padding-32 w3-text-light-grey hover" style="font-size:16px;text-decoration:none;">
+			
+			Technology
+			<div class="w3-dropdown-content w3-card-4" style="width:450px">
+	    		<img src="../static/assets/tech.jpeg" alt="tech img" style="width:100%" class="w3-animate-top">
+		    		<div class="w3-container">
+		      			<p class="w3-animate-top">London is the capital city of England.</p>
+		      			<p class="w3-animate-top">It is the most populous city in the UK.</p>
+		    		</div>
+		  	</div>
+			
+		</a>
+
+
+		<a href="{{url_for('category_list',c_name='Programming',c_id=3)}}" class="w3-dropdown-hover w3-bar-item w3-button w3-padding-32 w3-text-light-grey hover" style="font-size:16px;text-decoration:none;">
+			
+			Programming
+			<div class="w3-dropdown-content w3-card-4" style="width:450px">
+	    		<img src="../static/assets/programming.jpg" alt="programming img" style="width:100%" class="w3-animate-top">
+		    		<div class="w3-container">
+		      			<p class="w3-animate-top">London is the capital city of England.</p>
+		      			<p class="w3-animate-top">It is the most populous city in the UK.</p>
+		    		</div>
+		  	</div>
+			
+		</a>
+
+
+		<a href="{{url_for('category_list',c_name='Health',c_id=4)}}" class="w3-dropdown-hover w3-bar-item w3-button w3-padding-32 w3-text-light-grey hover" style="font-size:16px;text-decoration:none;">
+			
+			 Health
+			<div class="w3-dropdown-content w3-card-4" style="width:450px">
+	    		<img src="../static/assets/health.jpeg" alt="health img" style="width:100%" class="w3-animate-top">
+		    		<div class="w3-container">
+		      			<p class="w3-animate-top"> London is the capital city of England.</p>
+		      			<p class="w3-animate-top"> It is the most populous city in the UK.</p>
+		    		</div>
+		  	</div>
+			
+		</a>	
+
+
+		<a href="{{url_for('category_list',c_name='Productivity',c_id=5)}}" class="w3-dropdown-hover w3-bar-item w3-button w3-padding-32 w3-text-light-grey hover" style="font-size:16px;text-decoration:none;">
+			 Productivity
+			<div class="w3-dropdown-content w3-card-4" style="width:450px">
+	    		<img src="../static/assets/productivity.jpg" alt="productivity img" style="width:100%;height:250px;" class="w3-animate-top">
+		    		<div class="w3-container">
+		      			<p class="w3-animate-top"> London is the capital city of England.</p>
+		      			<p class="w3-animate-top"> It is the most populous city in the UK.</p>
+		    		</div>
+		  	</div>
+		
+		</a>	
+
+
+		<a href="{{url_for('category_list',c_name='Creativity',c_id=6)}}" class="w3-dropdown-hover w3-bar-item w3-button w3-padding-32 w3-text-light-grey hover" >
+			
+			 Creativity
+
+			<div class="w3-dropdown-content w3-card-4" style="width:450px">
+	    		<img src="../static/assets/creative.jpg" alt="creative img" style="width:100%" class="w3-animate-top">
+		    		<div class="w3-container">
+		      			<p class="w3-animate-top">London is the capital city of England.</p>
+		      			<p class="w3-animate-top"> It is the most populous city in the UK.</p>
+		    		</div>
+		  	</div>
+		
+		</a>
+
+	</div>
+	
+
+	<!-- Navbar ends here -->
+	
+	<br>
+
+	<div class="container">
+		{% with messages = get_flashed_messages(with_categories = true) %}
+        <div class="flashes">
+  			{% if messages %} 
+				<div class="alert alert-{{category}} ">
+					{{ message }}
+				</div>
+  			{% endif %}
+		{% endwith %}
+		</div>
+
+		<div class="row justify-content-center">
+			<div class="container col-12 col-lg-8">
+
+					{% block content %}{% endblock %}
+
+			</div>
+			<div class="col-12 col-md-8 col-lg-4">
+		            <div class="post-sidebar-area mb-100">
+		                <!-- Widget Area -->
+		                <div class="sidebar-widget-area w3-card-4">
+		                    <h5 class="title w3-center w3-card">About World</h5>
+		                    <div class="widget-content">
+		                        <p style="margin-left: 10px; margin-right: 10px" class="w3-justify">The mango is perfect in that it is always yellow and if it’s not, I don’t want to hear about it. The mango’s only flaw, and it’s a minor one, is the effort it sometimes takes to undress the mango, carve it up in a way that makes sense, and find its way to the mouth.</p>
+		                    </div>
+		                </div>
+		                <!-- Widget Area -->
+		                <div class="sidebar-widget-area w3-card-4 ">
+		                	<div class="w3-card" style="padding: 2px 2px 2px 2px;">
+			                	<h5 class="title"> <i class="fa fa-bookmark-o w3" style="font-size: 25px;margin-left: 10px;"></i>
+			                    <text style="margin-left: 10px">
+			                    	Bookmarked
+			                    </text> 	
+		                	</div>
+		                    
+		                	</h5>
+		                    <div class="widget-content">
+								
+								<!-- Single Blog Post -->
+								{% for post in bookmark_posts %}
+		                        <div class="single-blog-post post-style-2 d-flex align-items-center widget-post w3-card w3-display-container">
+		                            <!-- Post Thumbnail -->
+		                            <div class="post-thumbnail ">
+		                                <img src="../static/assets/Information-Digital-Data-Management.jpg" alt="img" style="height:60px;width:60px;">
+		                            </div>
+		                            <!-- Post Content -->
+		                            <a href="{{url_for('each_post',c_name=post.category,c_id=post.category_id,p_id = post.post_id) }}" style="text-decoration: none;margin-left: 10px;" class="headline">
+		                            <div class="w3-margin-bottom post-content w3-center">
+	                                    <h5 class="mb-0">{{ post.post_title }} </h5>
+	                                </a>
+		                            
+		                            </div>
+		                            <div class="w3-display-right">
+		                            	
+                        <a href="{{url_for('delete_bookmark',post_id=post.post_id,user_id=post.user_id)}}" method="POST" style="margin-right: 10px;">
+		  								<i class="fa fa-close" style="font-size: 20px;">
+		  									
+		  								</i>
+		  							</a>
+		                            </div>
+		                        </div>
+								{% endfor %}
+		                    </div>
+		                </div>
+		                <!-- Widget Area -->
+		                <div class="sidebar-widget-area w3-card-4">
+		                    <h5 class="title w3-center">Stay Connected</h5>
+		                    <div class="widget-content">
+		                        <div class="social-area d-flex justify-content-between">
+		                            <a href="#"><i class="fa fa-facebook"></i></a>
+		                            <a href="#"><i class="fa fa-twitter"></i></a>
+		                            <a href="#"><i class="fa fa-pinterest"></i></a>
+		                            <a href="#"><i class="fa fa-vimeo"></i></a>
+		                            <a href="#"><i class="fa fa-instagram"></i></a>
+		                            <a href="#"><i class="fa fa-google"></i></a>
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+	        </div>
+	</div>
+		
+
+	<br><br>
+
+	<!-- Recently posted starts here -->
+	
+	<div class="w3-middle w3-container">
+		<div class="w3-left w3-panel w3-border-color-teal"
+			style="
+			margin-left: 45%;
+			font-size: 20px;
+			font-weight: bold;
+			box-shadow: 2px 2px 5px #737373;
+			border-left: 3px solid #F70B0B;
+			border-top: 3px solid #F70B0B;
+			">
+			<i class="fas fa-users"></i>
+			Recent Post
+		</div> 
+		
+
+			<!-- select from database with latest query from all categories -->
+	
+	<br><br><br>
+		
+		{% for post in recent_posts %}
+		<a href="{{ url_for('each_post',c_name=post.category,c_id=post.category_id,p_id = post.post_id) }}" style="text-decoration: none"> 
+		<div class="w3-card w3-third zoom" style="border-bottom:5px solid #FF7A00;height: 300px;">
+			<div class="w3-display-container">
+			<img src="../static/assets/programming.jpg" class="photos w3-image" alt="photo" style="width:100%;box-shadow: 0px 0px 50px #787878;">
+			<a href="{{url_for('category_list',c_name=post.category,c_id=post.category_id)}}" class="w3-display-topleft w3-tag w3-light-blue hover ">
+					{{ post.category }}
+			
+			</a>
+				<h5 class="w3-center" style="font-family: 'Rubik', sans-serif;padding: 2px 2px 2px 2px;">
+					 {{ post.post_title }} 
+				</h5>
+				<div class="w3-bottom-right" style="font-size:10px;">
+					{{post.date}}
+				</div>
+			</div>
+		</div>
+		</a>
+		{% endfor %}
+	</div>
+
+	<!-- Recently posted ends here -->
+
+	<br><br><br>
+
+	<!-- Trending posts starts here -->
+
+
+	<div class="w3-middle w3-container">
+		<div class="w3-left w3-panel w3-border-color-teal"
+			style="
+			margin-left: 45%;
+			font-size: 20px;
+			font-weight: bold;
+			box-shadow: 2px 2px 5px #737373;
+			border-left: 3px solid #F70B0B;
+			border-top: 3px solid #F70B0B;
+			">
+			<i class="fas fa-users"></i>
+			Trending Post
+		</div> 
+		
+
+			<!-- select from database with highest share query from all categories -->
+	
+	<br><br><br>
+		
+		{% for post in data_trends %}
+		<a href="{{ url_for('each_post',c_name=post.category,c_id=post.category_id,p_id = post.post_id) }}" style="text-decoration: none"> 
+		<div class="w3-card w3-third zoom w3-display-container" style="border-bottom:5px solid #FF7A00;height: 300px;">
+			<img src="../static/assets/programming.jpg" class="photos w3-image" alt="photo" style="width:100%;box-shadow: 0px 0px 50px #787878;">
+				<h5 class="w3-center" style="font-family: 'Rubik', sans-serif;padding: 3px 3px 3px 3px;">
+					 {{ post.post_title }} 
+				</h5>
+				<a href="{{url_for('category_list',c_name=post.category,c_id=post.category_id)}}" class="w3-display-topleft w3-tag w3-light-blue hover">
+					{{ post.category }}
+				</a>
+
+			
+				<div class="w3-bottom-right" style="font-size:10px;">
+					Total share : {{ post.share_amount }}
+				</div>
+		</div>
+		</a>
+		{% endfor %}
+	</div>
+
+	<!-- Trending post ends here -->
+</body>
+</html>

@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block content %}
+
+{% if posts %}
+	{% for post in posts %}
+		<article class="media content-section w3-display-container">
+		  <div class="-media-body">
+		    <div class="article-metadata text-muted" style="font-family: 'Ubuntu', sans-serif;">
+		      {{post.username}} on
+		      <small class="text-muted"> {{post.date_posted}} </small>
+		    </div>
+		    <h2 class="article-title"><a class="mr-2" href="{{ url_for('each_post',c_name=post.category,c_id=2,p_id = post.post_id) }}" style="text-decoration: none;font-family: 'Rubik', sans-serif;"> {{ post.post_title }} </h2></a>
+		    <p class="article-content" style="font-family: 'Slabo 27px', serif; font-size: 18px;">
+		    	{{ post.content }}
+		    </p>
+		  </div>
+		  <span class="w3-display-right w3-hoverable">
+		  	<a href="{{url_for('insert_bookmark',post_id=post.post_id)}}" method="POST"">
+		  		<i onclick="myFunction2(this)" class="fa fa-bookmark w3" style="font-size: 25px;"></i>
+		  	</a>
+		  	
+		  </span>
+		</article>
+		<br><br>
+	{% endfor %}
+
+	{% else %}
+		<p style="font-family: 'Fjalla One', sans-serif; font-size: 40px">THERE IS NO POST IN THIS CATEGORY </p>
+{% endif %}
+
+
+		
+{% endblock content %}
