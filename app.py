@@ -103,7 +103,7 @@ def sql_delete_bookmark(post_id,user_id):
 def home():
 	cursor = db.cursor()
 	list = records_needed_in_layout()
-   	author_post=[]
+	author_post=[]
 	bookmark_posts = list[0]
 	recent_posts = list[1]
 	data_trends = list[2]
